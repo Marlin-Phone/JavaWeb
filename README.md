@@ -93,6 +93,30 @@
     └── WEB-INF/
         ├── web.xml        # Web应用配置文件
         └── classes/       # 编译后的Java类文件
+│
+└── exp05/                  # 实验五：JDBC数据库访问与DAO设计模式
+    ├── index.html          # 主页，包含所有实验的链接
+    ├── displayBooks.jsp    # 显示图书信息的JSP页面
+    ├── insertCustomer.jsp  # 添加客户信息的JSP页面
+    ├── showCustomer.jsp    # 显示客户信息的JSP页面
+    ├── editCustomer.jsp    # 修改客户信息的JSP页面
+    ├── 实验预习报告.md      # 实验预习报告
+    ├── 实验报告.md          # 实验报告
+    ├── src/               # Java源代码目录
+    │   └── com/
+    │       ├── beans/     # JavaBean类
+    │       │   ├── BookBean.java       # 图书信息JavaBean
+    │       │   └── CustomerBean.java   # 客户信息JavaBean
+    │       ├── dao/       # 数据访问对象
+    │       │   ├── CustomerDAO.java         # 客户数据访问接口
+    │       │   └── CustomerDAOImpl.java     # 客户数据访问实现类
+    │       │   └── BookDAO.java             # 图书数据访问类
+    │       └── servlet/   # Servlet类
+    │           ├── InsertCustomerServlet.java  # 插入客户信息的Servlet
+    │           └── ActionServlet.java          # 处理客户信息修改和删除的Servlet
+    └── WEB-INF/
+        ├── web.xml        # Web应用配置文件
+        └── lib/           # 第三方库
 ```
 
 ## 实验内容介绍
@@ -130,6 +154,12 @@
 4. **URL重写**: 演示URL重写机制，在禁用Cookie的情况下保持会话。
 5. **购物车程序改进**: 对购物车程序进行改进，支持修改商品数量和更新购物车。
 
+### 实验五：JDBC数据库访问与DAO设计模式
+
+1. **传统JDBC方法**: 使用传统JDBC方法访问MySQL数据库，通过JSP页面显示图书信息。
+2. **DAO设计模式**: 实现DAO设计模式，对客户信息进行增删改查操作。
+3. **MVC架构**: 采用MVC设计模式，Servlet作为控制器，JSP作为视图，JavaBean作为模型。
+
 ## 运行环境
 
 - Java JDK 8或更高版本
@@ -148,6 +178,7 @@
 - 实验二包含详细的实验报告和预习报告
 - 实验三包含详细的实验报告和预习报告
 - 实验四包含详细的实验报告和预习报告
+- 实验五包含详细的实验报告和预习报告
 
 ## 注意事项
 
