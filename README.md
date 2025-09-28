@@ -42,6 +42,32 @@
     ├── errorHandler.jsp    # 错误处理页面
     ├── 实验报告.md          # 实验二报告
     └── 实验预习报告.md      # 实验二预习报告
+│
+└── exp03/                  # 实验三：Web组件重用与JavaBeans
+    ├── index.html          # 主页，包含所有实验的链接
+    ├── hello.jsp           # 静态包含示例 - 方法一
+    ├── response.jsp        # 静态包含的子页面 - 方法一
+    ├── hello2.jsp          # 静态包含示例 - 方法二
+    ├── response2.jsp       # 静态包含的子页面 - 方法二
+    ├── main.jsp            # 动态包含示例 - 主页面
+    ├── subpage.jsp         # 动态包含的子页面
+    ├── login.html          # 用户登录页面
+    ├── display.jsp         # 显示用户信息页面
+    ├── calculate.jsp       # 简单计算器页面
+    ├── 实验预习报告.md      # 实验预习报告
+    ├── 实验报告.md          # 实验报告
+    ├── src/               # Java源代码目录
+    │   └── com/
+    │       └── beans/
+    │           ├── UserBean.java          # 用户信息JavaBean
+    │           └── SimpleCalculator.java  # 简单计算器JavaBean
+    └── WEB-INF/
+        ├── web.xml        # Web应用配置文件
+        └── classes/       # 编译后的Java类文件
+            └── com/
+                └── beans/
+                    ├── UserBean.class
+                    └── SimpleCalculator.class
 ```
 
 ## 实验内容介绍
@@ -62,6 +88,15 @@
 3. **错误处理**: errorHandler.jsp演示了JSP中的错误处理机制。
 4. **会话跟踪**: 通过session对象实现用户登录状态的跟踪。
 
+### 实验三：Web组件重用与JavaBeans
+
+1. **静态包含实验**: 演示了使用`<%@ include %>`指令实现静态包含，包括两种数据共享方法。
+2. **动态包含实验**: 演示了使用`<jsp:include>`动作实现动态包含，通过参数传递数据。
+3. **JavaBeans使用实验**:
+   - UserBean：用于管理用户信息的JavaBean
+   - SimpleCalculator：实现四则运算的简单计算器JavaBean
+4. **JSP标准动作**: 深入使用`<jsp:useBean>`、`<jsp:setProperty>`、`<jsp:getProperty>`等标准动作。
+
 ## 运行环境
 
 - Java JDK 8或更高版本
@@ -78,6 +113,7 @@
 
 - 实验一报告请查看相关文档
 - 实验二包含详细的实验报告和预习报告
+- 实验三包含详细的实验报告和预习报告
 
 ## 注意事项
 
