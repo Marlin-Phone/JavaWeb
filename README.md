@@ -117,9 +117,26 @@
     └── WEB-INF/
         ├── web.xml        # Web应用配置文件
         └── lib/           # 第三方库
-```
-
-## 实验内容介绍
+        │
+        └── exp06/                  # 实验六：Web事件处理与过滤器
+            ├── index.html          # 主页，包含所有实验的链接
+            ├── contextListenerTest.jsp  # ServletContext监听器测试页面
+            ├── sessionDisplay.jsp  # 会话统计页面
+            ├── onlineCount.jsp     # 页面访问统计页面
+            ├── 实验预习报告.md      # 实验预习报告
+            ├── 实验报告.md          # 实验报告
+            ├── src/               # Java源代码目录
+            │   └── com/
+            │       └── listener/  # 事件监听器类
+            │           ├── MyServletContextListener.java  # ServletContext事件监听器
+            │           ├── MySessionListener.java         # HttpSession事件监听器
+            │           └── MyRequestListener.java         # ServletRequest事件监听器
+            └── WEB-INF/
+                ├── web.xml        # Web应用配置文件
+                └── classes/       # 编译后的Java类文件
+        ```
+        
+        ## 实验内容介绍
 
 ### 实验一：Servlet编程
 
@@ -160,6 +177,12 @@
 2. **DAO设计模式**: 实现DAO设计模式，对客户信息进行增删改查操作。
 3. **MVC架构**: 采用MVC设计模式，Servlet作为控制器，JSP作为视图，JavaBean作为模型。
 
+### 实验六：Web事件处理与过滤器
+
+1. **ServletContext监听器**: 监听Web应用的启动和销毁事件，管理数据库连接资源。
+2. **HttpSession监听器**: 监听会话的创建和销毁事件，统计在线用户数。
+3. **ServletRequest监听器**: 监听请求的创建和销毁事件，统计页面访问次数。
+
 ## 运行环境
 
 - Java JDK 8或更高版本
@@ -179,6 +202,7 @@
 - 实验三包含详细的实验报告和预习报告
 - 实验四包含详细的实验报告和预习报告
 - 实验五包含详细的实验报告和预习报告
+- 实验六包含详细的实验报告和预习报告
 
 ## 注意事项
 
