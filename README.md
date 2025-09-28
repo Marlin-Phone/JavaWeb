@@ -68,6 +68,31 @@
                 └── beans/
                     ├── UserBean.class
                     └── SimpleCalculator.class
+│
+└── exp04/                  # 实验四：会话管理
+    ├── index.html          # 主页，包含所有实验的链接
+    ├── showSessionInfo     # 显示会话信息的Servlet
+    ├── guessNumber         # 猜数游戏Servlet
+    ├── checkUser           # 自动登录功能Servlet
+    ├── home                # URL重写示例Servlet
+    ├── showCart.jsp        # 购物车页面
+    ├── 实验预习报告.md      # 实验预习报告
+    ├── 实验报告.md          # 实验报告
+    ├── src/               # Java源代码目录
+    │   └── com/
+    │       ├── servlet/   # Servlet类
+    │       │   ├── ShowSessionInfo.java
+    │       │   ├── GuessNumberServlet.java
+    │       │   ├── CheckUserServlet.java
+    │       │   ├── HomeServlet.java
+    │       │   ├── ControllerServlet.java
+    │       │   └── LogoutServlet.java
+    │       └── cart/      # 购物车相关类
+    │           ├── ShoppingCart.java
+    │           └── GoodsItem.java
+    └── WEB-INF/
+        ├── web.xml        # Web应用配置文件
+        └── classes/       # 编译后的Java类文件
 ```
 
 ## 实验内容介绍
@@ -97,6 +122,14 @@
    - SimpleCalculator：实现四则运算的简单计算器JavaBean
 4. **JSP标准动作**: 深入使用`<jsp:useBean>`、`<jsp:setProperty>`、`<jsp:getProperty>`等标准动作。
 
+### 实验四：会话管理
+
+1. **会话信息管理**: 使用HttpSession对象管理会话，显示会话ID、创建时间、最近访问时间等信息。
+2. **猜数游戏**: 使用HttpSession实现简单的猜数游戏，演示会话的生命周期管理。
+3. **自动登录**: 使用Cookie技术实现自动登录功能。
+4. **URL重写**: 演示URL重写机制，在禁用Cookie的情况下保持会话。
+5. **购物车程序改进**: 对购物车程序进行改进，支持修改商品数量和更新购物车。
+
 ## 运行环境
 
 - Java JDK 8或更高版本
@@ -114,6 +147,7 @@
 - 实验一报告请查看相关文档
 - 实验二包含详细的实验报告和预习报告
 - 实验三包含详细的实验报告和预习报告
+- 实验四包含详细的实验报告和预习报告
 
 ## 注意事项
 
