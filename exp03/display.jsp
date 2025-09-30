@@ -1,9 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    // 设置POST请求的字符编码
+    request.setCharacterEncoding("UTF-8");
+%>
 <jsp:useBean id="user" class="com.beans.UserBean" scope="page"/>
 <jsp:setProperty name="user" property="*"/>
 
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>用户信息显示</title>
 </head>
 <body>
