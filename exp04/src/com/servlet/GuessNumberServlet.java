@@ -6,7 +6,6 @@ import javax.servlet.annotation.*;
 import java.io.*;
 import java.util.Random;
 
-@WebServlet("/guessNumber")
 public class GuessNumberServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

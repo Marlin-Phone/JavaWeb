@@ -32,7 +32,7 @@ public class ShoppingCart {
     
     // 删除商品
     public void remove(int id) {
-        items.removeIf(item -> item.getId() == id);
+        items.removeIf(cartItem -> cartItem.getId() == id);
     }
     
     // 获取所有商品
@@ -42,6 +42,6 @@ public class ShoppingCart {
     
     // 计算总金额
     public double getTotal() {
-        return items.stream().mapToDouble(item -> item.getPrice() * item.getQuantity()).sum();
+        return items.stream().mapToDouble(cartItem -> cartItem.getPrice() * cartItem.getQuantity()).sum();
     }
 }

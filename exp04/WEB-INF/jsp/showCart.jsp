@@ -21,7 +21,7 @@
 <%
     } else {
 %>
-<form method="post" action="controller">
+<form method="post" action="/exp04/controller">
 <table border="1">
     <tr>
         <th>商品名称</th>
@@ -57,6 +57,6 @@
 <%
     }
 %>
-<p><a href="index.html">继续购物</a></p>
+<p><a href="products">继续购物</a></p>
 </body>
 </html>

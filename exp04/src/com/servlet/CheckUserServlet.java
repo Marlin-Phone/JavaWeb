@@ -5,7 +5,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.*;
 
-@WebServlet("/checkUser")
 public class CheckUserServlet extends HttpServlet {
     // 模拟用户数据库
     private static final String VALID_USERNAME = "admin";
