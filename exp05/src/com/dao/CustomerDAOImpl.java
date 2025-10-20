@@ -7,9 +7,9 @@ import java.util.List;
 
 public class CustomerDAOImpl implements CustomerDAO {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/test";
+    private static final String URL = "jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "yourPassword";
 
     static {
         try {
@@ -72,6 +72,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean insertCustomer(CustomerBean customer) {
+        // 检查邮箱是否已存在
+        if (getCustomerByEmail(customer.getEmail()) != null) {
+            System.err.println("插入失败：邮箱已存在 - " + customer.getEmail());
+            return false;
+        }
+        
         String sql = "INSERT INTO customer (custName, email, phone) VALUES (?, ?, ?)";
         
         try (Connection conn = getConnection();
@@ -84,6 +90,10 @@ public class CustomerDAOImpl implements CustomerDAO {
             int rowsAffected = pstmt.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
+            System.err.println("插入客户信息失败:");
+            System.err.println("SQL: " + sql);
+            System.err.println("参数: " + customer.getCustName() + ", " +
+                               customer.getEmail() + ", " + customer.getPhone());
             e.printStackTrace();
             return false;
         }

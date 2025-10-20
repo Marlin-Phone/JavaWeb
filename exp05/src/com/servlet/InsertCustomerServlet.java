@@ -30,16 +30,24 @@ public class InsertCustomerServlet extends HttpServlet {
         customer.setPhone(phone);
         
         // 调用DAO插入数据
-        boolean success = customerDAO.insertCustomer(customer);
-        
-        // 设置响应
-        response.setContentType("text/html;charset=UTF-8");
-        if (success) {
-            response.getWriter().println("<h2>客户信息添加成功！</h2>");
-            response.getWriter().println("<a href='showCustomer.jsp'>查看所有客户</a>");
-            response.getWriter().println("<br><a href='insertCustomer.jsp'>继续添加客户</a>");
-        } else {
-            response.getWriter().println("<h2>客户信息添加失败！</h2>");
+        try {
+            boolean success = customerDAO.insertCustomer(customer);
+            
+            // 设置响应
+            response.setContentType("text/html;charset=UTF-8");
+            if (success) {
+                response.getWriter().println("<h2>客户信息添加成功！</h2>");
+                response.getWriter().println("<a href='showCustomer.jsp'>查看所有客户</a>");
+                response.getWriter().println("<br><a href='insertCustomer.jsp'>继续添加客户</a>");
+            } else {
+                response.getWriter().println("<h2>客户信息添加失败！</h2>");
+                response.getWriter().println("<a href='insertCustomer.jsp'>返回添加页面</a>");
+            }
+        } catch (Exception e) {
+            response.getWriter().println("<h2>添加过程中发生错误：</h2>");
+            response.getWriter().println("<pre>");
+            e.printStackTrace(response.getWriter());
+            response.getWriter().println("</pre>");
             response.getWriter().println("<a href='insertCustomer.jsp'>返回添加页面</a>");
         }
     }

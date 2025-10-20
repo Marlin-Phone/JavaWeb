@@ -1,0 +1,36 @@
+### 详细编译步骤：
+
+1. **编译内容**：
+   - 编译`src\com\beans\`目录下的所有Java文件
+   - 编译`src\com\dao\`目录下的所有Java文件
+   - 编译`src\com\servlet\`目录下的所有Java文件
+
+2. **编译命令**：
+   ```cmd
+   cd "C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\exp05"
+   set CLASSPATH=.;WEB-INF\lib\*;"C:\Program Files\Apache Software Foundation\Tomcat 9.0\lib\servlet-api.jar"
+   javac -d WEB-INF\classes src\com\beans\*.java src\com\dao\*.java src\com\servlet\*.java
+   ```
+
+3. **编译后文件位置**：
+   - 所有编译后的`.class`文件会自动保存到`WEB-INF\classes`目录
+   - 目录结构：
+     ```
+     WEB-INF\classes\
+        ├── com\
+        │   ├── beans\
+        │   │   └── BookBean.class
+        │   ├── dao\
+        │   │   └── BookDAO.class
+        │   └── servlet\
+        │       ├── BookQueryServlet.class
+        │       └── BookInsertServlet.class
+     ```
+
+4. **验证编译结果**：
+   - 检查`WEB-INF\classes`目录是否生成.class文件
+   - 如果编译失败，查看命令行输出的错误信息
+
+5. **重启Tomcat**：
+   - 停止Tomcat服务
+   - 启动Tomcat服务

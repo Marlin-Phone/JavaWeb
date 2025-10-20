@@ -25,6 +25,7 @@
     <%
         BookDAO bookDAO = new BookDAO();
         List<BookBean> books = bookDAO.getAllBooks();
+        System.out.println("获取图书数量: " + (books != null ? books.size() : 0));
     %>
     <table>
         <tr>
@@ -34,14 +35,20 @@
             <th>价格</th>
             <th>出版社</th>
         </tr>
-        <% for (BookBean book : books) { %>
-        <tr>
-            <td><%= book.getBookId() %></td>
-            <td><%= book.getTitle() %></td>
-            <td><%= book.getAuthor() %></td>
-            <td><%= book.getPrice() %></td>
-            <td><%= book.getPublisher() %></td>
-        </tr>
+        <% if (books != null && !books.isEmpty()) { %>
+            <% for (BookBean book : books) { %>
+            <tr>
+                <td><%= book.getBookId() %></td>
+                <td><%= book.getTitle() %></td>
+                <td><%= book.getAuthor() %></td>
+                <td><%= book.getPrice() %></td>
+                <td><%= book.getPublisher() %></td>
+            </tr>
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td colspan="5" style="text-align:center;">未找到图书数据</td>
+            </tr>
         <% } %>
     </table>
 </body>

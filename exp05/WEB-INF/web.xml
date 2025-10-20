@@ -12,24 +12,27 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
     
-    <!-- InsertCustomerServlet -->
+    <!-- InsertCustomerServlet (已移除重复定义) -->
+    
+    <!-- ActionServlet (已移除重复定义) -->
+    
+    <!-- BookQueryServlet -->
     <servlet>
-        <servlet-name>InsertCustomerServlet</servlet-name>
-        <servlet-class>com.servlet.InsertCustomerServlet</servlet-class>
+        <servlet-name>BookQueryServlet</servlet-name>
+        <servlet-class>com.servlet.BookQueryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>InsertCustomerServlet</servlet-name>
-        <url-pattern>/InsertCustomerServlet</url-pattern>
+        <servlet-name>BookQueryServlet</servlet-name>
+        <url-pattern>/BookQueryServlet</url-pattern>
     </servlet-mapping>
     
-    <!-- ActionServlet -->
+    <!-- BookInsertServlet -->
     <servlet>
-        <servlet-name>ActionServlet</servlet-name>
-        <servlet-class>com.servlet.ActionServlet</servlet-class>
+        <servlet-name>BookInsertServlet</servlet-name>
+        <servlet-class>com.servlet.BookInsertServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ActionServlet</servlet-name>
-        <url-pattern>/ActionServlet</url-pattern>
+        <servlet-name>BookInsertServlet</servlet-name>
+        <url-pattern>/BookInsertServlet</url-pattern>
     </servlet-mapping>
-    
 </web-app>

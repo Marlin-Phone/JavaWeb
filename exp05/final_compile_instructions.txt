@@ -1,0 +1,46 @@
+# 实验五编译指南 (PowerShell兼容)
+
+## 1. 打开PowerShell
+- 按Win+R，输入`powershell`，回车
+
+## 2. 设置环境变量
+```powershell
+$env:JAVA_HOME = "C:\Program Files\Java\jdk-23"
+$env:PATH = "$env:JAVA_HOME\bin;$env:PATH"
+$env:TOMCAT_HOME = "C:\Program Files\Apache Software Foundation\Tomcat 9.0"
+```
+
+## 3. 切换到项目目录
+```powershell
+cd "C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\exp05"
+```
+
+## 4. 创建classes目录
+```powershell
+if (!(Test-Path "WEB-INF\classes")) { New-Item -ItemType Directory -Path "WEB-INF\classes" }
+```
+
+## 5. 编译Java文件
+```powershell
+# 编译BookBean
+javac -d "WEB-INF\classes" "src\com\beans\BookBean.java"
+
+# 编译BookDAO
+javac -d "WEB-INF\classes" -cp "WEB-INF\classes;$env:TOMCAT_HOME\lib\servlet-api.jar;WEB-INF\lib\*" "src\com\dao\BookDAO.java"
+
+# 编译Servlet
+javac -d "WEB-INF\classes" -cp "WEB-INF\classes;$env:TOMCAT_HOME\lib\servlet-api.jar;WEB-INF\lib\*" "src\com\servlet\BookQueryServlet.java" "src\com\servlet\BookInsertServlet.java"
+```
+
+## 6. 验证编译结果
+```powershell
+Get-ChildItem -Recurse -Path "WEB-INF\classes" -Filter *.class
+```
+
+## 7. 重启Tomcat服务
+1. 停止Tomcat服务
+2. 启动Tomcat服务
+
+## 8. 测试功能
+- 图书查询：http://localhost:8080/exp05/bookQuery.jsp
+- 图书录入：http://localhost:8080/exp05/bookInsert.jsp
