@@ -32,7 +32,7 @@
         <c:forEach var="sess" items="${applicationScope.sessionList}">
             <tr>
                 <td>${sess.id}</td>
-                <td><%= new java.util.Date(((HttpSession)pageContext.getAttribute("sess")).getCreationTime()) %></td>
+                <td>${sess.creationTime}</td>
             </tr>
         </c:forEach>
     </table>
